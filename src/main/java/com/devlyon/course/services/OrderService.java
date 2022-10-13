@@ -6,23 +6,23 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.devlyon.course.entities.Uso;
-import com.devlyon.course.repositories.UsoRepository;
+import com.devlyon.course.entities.Order;
+import com.devlyon.course.repositories.OrderRepository;
 
 
 
 @Service
-public class UsoService {
+public class OrderService {
 
 	@Autowired
-	private UsoRepository repository;
+	private OrderRepository repository;
 	
-	public List<Uso> findAll() {
+	public List<Order> findAll() {
 		return repository.findAll();
 	}
 	
-	public Uso findById(Long id) {
-		Optional<Uso> obj = repository.findById(id);
+	public Order findById(Long id) {
+		Optional<Order> obj = repository.findById(id);
 		return obj.get();
 	}
 }
